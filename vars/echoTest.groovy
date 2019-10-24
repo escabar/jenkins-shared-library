@@ -3,4 +3,16 @@ def call(String msg) {
   sh """
     pwd
   """
+  pipeline {
+    agent any
+    
+    stages {
+      stage('shared-stage') {
+        steps {
+           echo "In shared stage"
+        }
+      
+      }
+    }
+  }
 }
